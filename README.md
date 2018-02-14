@@ -12,4 +12,4 @@ python3 manage.py createsuperuser
 python3 manage.py runserver
 ```
 
-Shout out to Tai Bayard for fixing the update url pattern!
+Shout out to [Tai Bayard](https://github.com/taibayard) and [Winston Summers](https://github.com/winstonsummers) for fixing the update url pattern and template error!
