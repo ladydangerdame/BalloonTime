@@ -15,12 +15,16 @@ def party_detail(request, pk):
     party = Party.objects.get(pk=pk)
     return render(request, 'party_detail.html', {'party': party})
 
-def post_party(request):
-    form = PartyForm(request.POST)
-    if form.is_valid():
-        party = form.save(commit = False)
-        party.save()
-    return HttpResponseRedirect('/')
+# def post_party(request):
+#     form = PartyForm(request.POST)
+#     if form.is_valid():
+#         party = form.save(commit = False)
+#         party.save()
+#     return HttpResponseRedirect('/')
+
+class PartyCreate(CreateView):
+    model = Party
+    fields = ['title', 'location', 'description']
 
 class PartyDelete(DeleteView):
     model = Party
@@ -29,3 +33,4 @@ class PartyDelete(DeleteView):
 class PartyUpdate(UpdateView):
     model = Party
     fields = ['title', 'location', 'description']
+    success_url = reverse_lazy('party_list')
