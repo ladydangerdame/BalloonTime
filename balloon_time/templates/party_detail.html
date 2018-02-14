@@ -6,12 +6,15 @@
 <article>
   <h2 class="partytitle">{{ party.title }}</h2>
   {{ party.description }}
-  <form action="{% url 'party_delete' party.id %}" method="delete">
+  <form action="{% url 'party_delete' party.id %}" method="post">
     {% csrf_token %}
     <input type="submit" value="Delete">
   </form>
-  <form action="{% url party.id 'party_update'  %}" method="post">
+  <form action="{% url 'party_update' party.id %}" method="post">
     {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
     <input type="submit" value="Update">
   </form>
 
