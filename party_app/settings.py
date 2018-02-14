@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'party_app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': ('balloontime'),
+        'NAME': ('balloontime2'),
     }
 }
 
