@@ -104,3 +104,6 @@ Using the stubbed out views, and the [documentation](https://docs.djangoproject.
 ### Bonus:
 
 Create CRUD views, form fields, and URLs for creating clowns and assigning them to parties. (You already can do this through the Django admin panel since you used the ManyToManyField! It's a matter of mapping that to your front end the same was as Parties!)
+
+#### Hot tip:
+There is a completed branch for this code if you should get stuck. However, it doesn't include the bonus work!
