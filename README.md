@@ -17,7 +17,7 @@ You've got a lot of clowns to manage and parties to dispatch them to. We need to
 
 I've already done some of the work for you! Have a look in ```settings.py``` to see that the database has been changed from the default sqlite to postgresql. There's some templates and styles (so pretty, am I right?) and stubbed out views.
 
-All we need to add to today is ```views.py``` and ```models.py```
+All we need modify is ```views.py``` and ```models.py```
 
 ### Many to many relationships in Django
 
@@ -60,3 +60,10 @@ class Clown(models.Model):
     class Meta:
         ordering = ('name',)
 ```
+
+In the snippet above I have used the ManyToManyField on the Clown model, as parties can have many clowns. However, I could have put the ManyToManyField on the Party model! It does not really matter! You only need to define the relationship once!
+
+If you'd like to read more about Many to Many relationships, you can do so [in the Django docs here!](https://docs.djangoproject.com/en/2.0/topics/db/examples/many_to_many/)
+
+
+### Class-based views
