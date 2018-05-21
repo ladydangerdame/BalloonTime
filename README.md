@@ -63,7 +63,38 @@ class Clown(models.Model):
 
 In the snippet above I have used the ManyToManyField on the Clown model, as parties can have many clowns. However, I could have put the ManyToManyField on the Party model! It does not really matter! You only need to define the relationship once!
 
+Go ahead into ```models.py``` and add the ManyToManyField to whichever model you prefer.
+
 If you'd like to read more about Many to Many relationships, you can do so [in the Django docs here!](https://docs.djangoproject.com/en/2.0/topics/db/examples/many_to_many/)
 
 
 ### Class-based views
+
+[Introduction to Class-based views](https://docs.djangoproject.com/en/2.0/topics/class-based-views/intro/)
+
+"Class-based views provide an alternative way to implement views as Python objects instead of functions. They do not replace function-based views, but have certain differences and advantages when compared to function-based views:
+
+- Organization of code related to specific HTTP methods (GET, POST, etc.) can be addressed by separate methods instead of conditional branching.
+- Object oriented techniques such as mixins (multiple inheritance) can be used to factor code into reusable components."
+
+This is an example of imperative versus declarative programming! I can spell out each step of what I want a view to do with functions (imperative), or I can use a Class view to handle HTTP requests (GET, POST, etc...) in just a few elegant lines of code. Let's take a peek at the differences:
+
+```python
+  def post_party(request):
+    form = PartyForm(request.POST)
+    if form.is_valid():
+        party = form.save(commit = False)
+        party.save()
+    return HttpResponseRedirect('/')
+```
+
+Above is an example of writing an imperative view, and it will get the job done. But we're spelling out each step. Use this form, check if it is valid, then save the input and redirect. Not too bad, but I think we can do better.
+
+```python
+class PartyCreate(CreateView):
+    model = Party
+    fields = ["title","location","description"]
+    success_url = reverse_lazy("party_list")
+```
+
+We cut down to 4 lines from 6. Not that drastic, but cleaner, clearer, and does the same work. With other views, using a class can really cut down the lines you write more drastically. 
