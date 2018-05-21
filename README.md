@@ -97,4 +97,10 @@ class PartyCreate(CreateView):
     success_url = reverse_lazy("party_list")
 ```
 
-We cut down to 4 lines from 6. Not that drastic, but cleaner, clearer, and does the same work. With other views, using a class can really cut down the lines you write more drastically. 
+We cut down to 4 lines from 6. Not that drastic, but cleaner, clearer, and does the same work. With other views, using a class can really cut down the lines you write more drastically.
+
+Using the stubbed out views, and the [documentation](https://docs.djangoproject.com/en/2.0/topics/class-based-views/generic-editing/), complete the views in your ```views.py```!
+
+###Bonus:
+
+Create CRUD views, form fields, and URLs for creating clowns and assigning them to parties. (You already can do this through the Django admin panel since you used the ManyToManyField! It's a matter of mapping that to your front end the same was as Parties!)
