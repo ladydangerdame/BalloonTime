@@ -16,7 +16,7 @@ class Party(models.Model):
 class Clown(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
-    parties = models.ManyToManyField(Party)
+
 
     def __str__(self):
         return self.name
