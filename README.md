@@ -101,9 +101,16 @@ We cut down to 4 lines from 6. Not that drastic, but cleaner, clearer, and does 
 
 Using the stubbed out views, and the [documentation](https://docs.djangoproject.com/en/2.0/topics/class-based-views/generic-editing/), complete the views in your ```views.py```!
 
-### Bonus:
+### Your Task:
 
-Create CRUD views, form fields, and URLs for creating clowns and assigning them to parties. (You already can do this through the Django admin panel since you used the ManyToManyField! It's a matter of mapping that to your front end the same way as Parties!)
+Create CRUD views (see note below), form fields, and URLs for creating clowns and assigning them to parties. (You already can do this through the Django admin panel since you used the ManyToManyField! It's a matter of mapping that to your front end the same way as Parties!)
+
+(*Note*: Django, on its own doesn't support full CRUD - no PUT or DELETE methods. Go ahead an just use GET/POST to approximate these for now, as shown in the `completed` branch of this repo)
+
+#### BONUS
+
+As noted above, your Django app doesn't support PUT and DELETE methods by default. This is a common problem that other developers are well aware of. Read up on the [Django REST framework](http://www.django-rest-framework.org/#example) if you'd like to see a way to implement legit full CRUD!
 
 #### Hot tip:
-There is a completed branch for this code if you should get stuck. However, it doesn't include the bonus work!
+
+There is a `completed` branch for this code if you should get stuck. However, it doesn't include the bonus work!
